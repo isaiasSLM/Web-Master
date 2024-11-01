@@ -1,0 +1,983 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Altera a fonte do corpo para Poppins */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #131026;
+    /* Cor de fundo do site */
+    color: #F2F2F2;
+    /* Cor padrão do texto */
+}
+
+header {
+    background: linear-gradient(135deg, rgba(54, 69, 89, 0.8));
+    /* Gradiente no fundo */
+    color: #F2F2F2;
+    /* Cor do texto */
+    padding: 40px;
+    /* Aumenta o padding para mais espaço */
+    display: flex;
+    /* Usar flexbox para layout */
+    flex-direction: column;
+    /* Coloca os itens em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    position: relative;
+    /* Necessário para o efeito de imagem de fundo */
+    text-align: center;
+    /* Centraliza o texto */
+    height: 100vh;
+    /* Altura total da tela */
+    width: 100vw;
+    /* Largura total da tela */
+    overflow: hidden;
+    /* Remove barra de rolagem caso tenha */
+}
+
+h1 {
+    font-size: 3em;
+    /* Tamanho do texto */
+    margin: 0;
+    /* Remove margens do título */
+    color: #FEDD00;
+    /* Cor do texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Sombra para destacar o texto */
+}
+
+.slogan {
+    font-size: 1.2em;
+    /* Tamanho do texto do slogan */
+    color: #F2F2F2;
+    /* Cor do texto */
+    margin-top: 10px;
+    /* Margem acima do slogan */
+}
+
+.botao-orcamento {
+    margin-top: 20px;
+    /* Margem acima do botão */
+    padding: 10px 20px;
+    /* Padding do botão */
+    background-color: #FEDD00;
+    /* Cor de fundo do botão */
+    color: #364559;
+    /* Cor do texto do botão */
+    border: none;
+    /* Remove borda */
+    border-radius: 5px;
+    /* Cantos arredondados */
+    font-size: 1em;
+    /* Tamanho do texto do botão */
+    text-decoration: none;
+    /* Remove sublinhado */
+    transition: background-color 0.3s;
+    /* Transição suave */
+}
+
+/* Efeito ao passar o mouse no botão */
+.botao-orcamento:hover {
+    background-color: #F2F2F2;
+    /* Muda a cor de fundo ao passar o mouse */
+    color: #364559;
+    /* Muda a cor do texto ao passar o mouse */
+}
+
+
+/* Adiciona imagem de fundo */
+header::before {
+    content: "";
+    background-image: url('img/logo.png');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    /* Cobre toda a área do cabeçalho */
+    background-position: center;
+    /* Centraliza a imagem */
+    position: fixed;
+    /* Posiciona a imagem em relação ao cabeçalho */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* Coloca a imagem atrás do texto */
+    opacity: 0.5;
+    /* Ajusta a opacidade da imagem para dar um efeito suave */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+        /* Reduz o padding em telas menores */
+    }
+
+    header h1 {
+        font-size: 2em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+
+    .slogan {
+        font-size: 1em;
+        /* Tamanho do slogan menor em telas pequenas */
+    }
+
+    .botao-orcamento {
+        font-size: 0.9em;
+        /* Tamanho da fonte do botão menor em telas pequenas */
+    }
+}
+
+/* Estilos gerais para todas as seções */
+section {
+    padding: 20px;
+    /* Espaçamento interno */
+    margin: 10px;
+    /* Margem externa */
+    background-color: #F2F2F2;
+    /* Fundo suave para as seções */
+    border-radius: 8px;
+    /* Cantos arredondados para a seção */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destaque */
+}
+
+/* Estilos para os títulos das seções */
+section h2 {
+    color: #6D8EF2;
+    /* Cor dos títulos das seções */
+    border-bottom: 2px solid #4B61A6;
+    /* Borda abaixo do título */
+    padding-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    font-size: 1.5em;
+    /* Tamanho da fonte para o título */
+    text-align: center;
+    /* Centraliza o título */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do título */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    section {
+        padding: 15px;
+        /* Reduz o padding em telas menores */
+        margin: 5px;
+        /* Reduz a margem em telas menores */
+    }
+
+    section h2 {
+        font-size: 1.3em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+}
+
+.projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centraliza os itens */
+}
+
+.projeto {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #4B61A6;
+    /* Borda em cor #4B61A6 */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    width: calc(100% / 2 - 40px);
+    /* Responsivo para telas médias */
+    max-width: 300px;
+    /* Largura máxima */
+    text-align: center;
+    /* Centraliza o texto */
+    background: #F2F2F2;
+    /* Fundo suave */
+    transition: transform 0.2s;
+    /* Animação suave */
+}
+
+.projeto img {
+    width: 100%;
+    /* Faz a imagem ocupar 100% da largura do projeto */
+    border-radius: 5px;
+    /* Cantos arredondados para as imagens */
+}
+
+.projeto:hover {
+    transform: scale(1.05);
+    /* Efeito de zoom ao passar o mouse */
+}
+
+.btn {
+    display: inline-block;
+    /* Para que o botão se comporte como um bloco */
+    margin-top: 10px;
+    /* Espaçamento acima do botão */
+    padding: 10px 15px;
+    /* Espaçamento interno do botão */
+    background-color: #1D8FF2;
+    /* Cor de fundo do botão */
+    color: #FFFFFF;
+    /* Cor do texto */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Efeitos de transição */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+}
+
+.btn:hover {
+    background-color: #5CB9F2;
+    /* Cor do botão ao passar o mouse */
+    transform: scale(1.05);
+    /* Efeito de zoom ao passar o mouse */
+}
+
+.btn:focus {
+    outline: none;
+    /* Remove o contorno padrão ao focar */
+    box-shadow: 0 0 5px #1D8FF2;
+    /* Sombra ao focar */
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+    .projeto {
+        width: calc(100% - 20px);
+        /* Largura total em telas menores */
+    }
+}
+
+/* Estilos para a seção de objetivos */
+.objetivos {
+    padding: 30px;
+    /* Aumenta o padding para mais espaço */
+    margin: 15px;
+    /* Aumenta a margem para um melhor espaçamento */
+    background: linear-gradient(135deg, #F2F2F2 30%, #E8E8E8 100%);
+    /* Gradiente suave */
+    border-radius: 12px;
+    /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra mais proeminente */
+    transition: transform 0.3s;
+    /* Animação ao passar o mouse */
+}
+
+.objetivos:hover {
+    transform: translateY(-5px);
+    /* Eleva a seção ao passar o mouse */
+}
+
+.objetivos h2 {
+    color: #6D8EF2;
+    /* Cor dos títulos */
+    border-bottom: 3px solid #4B61A6;
+    /* Borda mais espessa abaixo do título */
+    padding-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    font-size: 2em;
+    /* Aumenta o tamanho do título */
+    text-align: center;
+    /* Centraliza o título */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do título */
+    text-transform: uppercase;
+    /* Torna o texto em maiúsculas */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+}
+
+.objetivos p {
+    color: #364559;
+    /* Cor do texto */
+    font-size: 1.1em;
+    /* Aumenta o tamanho da fonte */
+    line-height: 1.8;
+    /* Aumenta o espaçamento entre linhas */
+    text-align: justify;
+    /* Justifica o texto */
+    margin-bottom: 15px;
+    /* Margem abaixo dos parágrafos */
+    transition: color 0.3s;
+    /* Animação suave para a cor do texto */
+}
+
+.objetivos p:hover {
+    color: #1D8FF2;
+    /* Muda a cor do texto ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .objetivos {
+        padding: 20px;
+        /* Ajusta o padding em telas menores */
+        margin: 10px;
+        /* Ajusta a margem em telas menores */
+    }
+
+    .objetivos h2 {
+        font-size: 1.6em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+
+    .objetivos p {
+        font-size: 1em;
+        /* Tamanho da fonte menor em telas pequenas */
+    }
+}
+
+
+.social-media a {
+    margin: 0 10px;
+    color: #FEDD00;
+    /* Cor dos links de redes sociais */
+}
+
+#servicos {
+    padding: 20px;
+    /* Adiciona espaço em volta da seção */
+    background-color: #364559;
+    /* Cor de fundo da seção */
+}
+
+.servicos-lista {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os serviços em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+}
+
+.servico {
+    background-color: #FFFFFF;
+    /* Fundo branco para cada serviço */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    margin: 15px 0;
+    /* Espaço entre os serviços */
+    padding: 15px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    width: 100%;
+    /* Largura total em dispositivos móveis */
+    max-width: 400px;
+    /* Limita a largura máxima em telas grandes */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transições suaves */
+}
+
+.servico:hover {
+    transform: translateY(-5px);
+    /* Levanta o serviço ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+.servico h3 {
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    color: #1D8FF2;
+    /* Cor do título */
+}
+
+.servico p {
+    color: #4A4A4A;
+    /* Cor do texto das descrições */
+}
+
+/* Estilos adicionais para dispositivos móveis */
+@media (max-width: 600px) {
+    .servicos-lista {
+        padding: 10px;
+        /* Reduz o padding para telas menores */
+    }
+
+    .servico {
+        margin: 10px 0;
+        /* Menos espaço entre os serviços */
+        padding: 10px;
+        /* Menos padding interno */
+    }
+}
+
+#servicos {
+    padding: 20px;
+    /* Adiciona espaço em volta da seção */
+    background-color: #364559;
+    /* Cor de fundo da seção */
+}
+
+.servicos-lista {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os serviços em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+}
+
+.servico {
+    background-color: #FFFFFF;
+    /* Fundo branco para cada serviço */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    margin: 15px 0;
+    /* Espaço entre os serviços */
+    padding: 15px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    width: 100%;
+    /* Largura total em dispositivos móveis */
+    max-width: 400px;
+    /* Limita a largura máxima em telas grandes */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transições suaves */
+}
+
+.servico:hover {
+    transform: translateY(-5px);
+    /* Levanta o serviço ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+.servico h3 {
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    color: #1D8FF2;
+    /* Cor do título */
+}
+
+.servico p {
+    color: #4A4A4A;
+    /* Cor do texto das descrições */
+}
+
+/* Estilos adicionais para dispositivos móveis */
+@media (max-width: 600px) {
+    .servicos-lista {
+        padding: 10px;
+        /* Reduz o padding para telas menores */
+    }
+
+    .servico {
+        margin: 10px 0;
+        /* Menos espaço entre os serviços */
+        padding: 10px;
+        /* Menos padding interno */
+    }
+}
+
+#depoimentos {
+    padding: 20px;
+    /* Adiciona espaço em volta da seção */
+    background-color: #ffffff;
+    /* Cor de fundo suave para a seção */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+.depoimentos-lista {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os depoimentos em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+}
+
+.depoimento {
+    background-color: #ffffff;
+    /* Fundo branco para cada depoimento */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    margin: 15px 0;
+    /* Espaço entre os depoimentos */
+    padding: 15px;
+    /* Espaçamento interno */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transições suaves */
+    width: 100%;
+    /* Largura total em dispositivos móveis */
+    max-width: 400px;
+    /* Limita a largura máxima em telas grandes */
+}
+
+.depoimento:hover {
+    transform: translateY(-5px);
+    /* Levanta o depoimento ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+.foto-cliente {
+    border-radius: 50%;
+    /* Torna a foto redonda */
+    width: 60px;
+    /* Largura da foto */
+    height: 60px;
+    /* Altura da foto */
+    object-fit: cover;
+    /* Corta a imagem de forma harmoniosa */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo da foto */
+}
+
+.depoimento p {
+    color: #131026;
+}
+
+.avaliacao {
+    margin-top: 10px;
+    /* Espaço acima da avaliação */
+}
+
+.estrela {
+    color: #FFD700;
+    /* Cor das estrelas */
+    font-size: 20px;
+    /* Tamanho das estrelas */
+}
+
+.foto-cliente {
+    border-radius: 50%;
+    /* Torna a foto redonda */
+    width: 60px;
+    /* Largura da foto */
+    height: 60px;
+    /* Altura da foto */
+    object-fit: cover;
+    /* Corta a imagem de forma harmoniosa */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo da foto */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transições suaves */
+}
+
+.foto-cliente:hover {
+    transform: scale(1.1);
+    /* Aumenta a foto ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra maior ao passar o mouse */
+}
+
+/* Estilos gerais para a seção de preços */
+#precos {
+    padding: 20px;
+    /* Espaçamento interno */
+    margin: 10px;
+    /* Margem externa */
+    background-color: #364559;
+    /* Cor de fundo da seção */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destaque */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+/* Estilos para o título da seção */
+#precos h2 {
+    color: #F2F2F2;
+    /* Cor do título */
+    font-size: 2em;
+    /* Tamanho da fonte do título */
+    margin-bottom: 15px;
+    /* Espaço abaixo do título */
+}
+
+/* Estilos para o texto do preço */
+#precos p {
+    color: #F2F2F2;
+    /* Cor do texto */
+    font-size: 1.1em;
+    /* Tamanho da fonte do texto */
+    margin: 0;
+    /* Remove margens padrão */
+}
+
+/* Estilo do botão de orçamento */
+.btn-orcamento {
+    display: inline-block;
+    /* Alinha o botão corretamente */
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    background-color: #1D8FF2;
+    /* Cor de fundo do botão */
+    color: #FFFFFF;
+    /* Cor do texto do botão */
+    border: none;
+    /* Remove bordas padrão */
+    border-radius: 5px;
+    /* Cantos arredondados do botão */
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    font-size: 1.1em;
+    /* Tamanho da fonte do botão */
+    margin-top: 15px;
+    /* Espaçamento acima do botão */
+    transition: background-color 0.3s;
+    /* Transição suave para a cor de fundo */
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-orcamento:hover {
+    background-color: #5CB9F2;
+    /* Cor de fundo alterada ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    #precos {
+        padding: 15px;
+        /* Reduz o padding em telas menores */
+        margin: 5px;
+        /* Reduz a margem em telas menores */
+    }
+
+    #precos h2 {
+        font-size: 1.5em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+
+    #precos p {
+        font-size: 1em;
+        /* Tamanho do texto menor em telas pequenas */
+    }
+
+    .btn-orcamento {
+        font-size: 1em;
+        /* Tamanho do texto do botão menor em telas pequenas */
+    }
+}
+
+/* Estilos gerais para a seção de preços */
+#precos {
+    padding: 20px;
+    /* Espaçamento interno */
+    margin: 10px;
+    /* Margem externa */
+    background-color: #364559;
+    /* Cor de fundo da seção */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destaque */
+    text-align: center;
+    /* Centraliza o texto */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transição suave para escala e sombra */
+}
+
+/* Efeito ao passar o mouse na seção de preços */
+#precos:hover {
+    transform: scale(1.05);
+    /* Aumenta a escala da seção */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Aumenta a sombra para destaque */
+}
+
+/* Estilos para o título da seção */
+#precos h2 {
+    color: #F2F2F2;
+    /* Cor do título */
+    font-size: 2em;
+    /* Tamanho da fonte do título */
+    margin-bottom: 15px;
+    /* Espaço abaixo do título */
+}
+
+/* Estilos para o texto do preço */
+#precos p {
+    color: #F2F2F2;
+    /* Cor do texto */
+    font-size: 1.1em;
+    /* Tamanho da fonte do texto */
+    margin: 0;
+    /* Remove margens padrão */
+}
+
+/* Estilo do botão de orçamento */
+.btn-orcamento {
+    display: inline-block;
+    /* Alinha o botão corretamente */
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    background-color: #1D8FF2;
+    /* Cor de fundo do botão */
+    color: #FFFFFF;
+    /* Cor do texto do botão */
+    border: none;
+    /* Remove bordas padrão */
+    border-radius: 5px;
+    /* Cantos arredondados do botão */
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    font-size: 1.1em;
+    /* Tamanho da fonte do botão */
+    margin-top: 15px;
+    /* Espaçamento acima do botão */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transição suave para a cor de fundo e escala */
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-orcamento:hover {
+    background-color: #5CB9F2;
+    /* Cor de fundo alterada ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta a escala do botão ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    #precos {
+        padding: 15px;
+        /* Reduz o padding em telas menores */
+        margin: 5px;
+        /* Reduz a margem em telas menores */
+    }
+
+    #precos h2 {
+        font-size: 1.5em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+
+    #precos p {
+        font-size: 1em;
+        /* Tamanho do texto menor em telas pequenas */
+    }
+
+    .btn-orcamento {
+        font-size: 1em;
+        /* Tamanho do texto do botão menor em telas pequenas */
+    }
+}
+
+/* Estilos para a seção do Instagram */
+#instagram {
+    padding: 20px;
+    /* Espaçamento interno */
+    margin: 10px;
+    /* Margem externa */
+    background: linear-gradient(45deg, #F58529, #F9278B, #D62976, #962FBF, #4E5B93);
+    /* Gradiente das cores do Instagram */
+    color: #FFFFFF;
+    /* Cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destaque */
+}
+
+/* Estilos para o título da seção */
+#instagram h2 {
+    font-size: 2em;
+    /* Tamanho da fonte do título */
+    margin-bottom: 10px;
+    /* Espaço abaixo do título */
+}
+
+/* Estilos para o texto da seção */
+#instagram p {
+    font-size: 1.1em;
+    /* Tamanho da fonte do texto */
+    margin-bottom: 15px;
+    /* Espaço abaixo do texto */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    #instagram {
+        padding: 15px;
+        /* Reduz o padding em telas menores */
+        margin: 5px;
+        /* Reduz a margem em telas menores */
+    }
+
+    #instagram h2 {
+        font-size: 1.5em;
+        /* Tamanho do título menor em telas pequenas */
+    }
+
+    #instagram p {
+        font-size: 1em;
+        /* Tamanho do texto menor em telas pequenas */
+    }
+
+    .snapwidget-widget {
+        height: 300px;
+        /* Altura menor do widget em telas pequenas */
+    }
+}
+
+/* Estilos para a área de informações de contato */
+.contato-info {
+    margin-top: 20px;
+    /* Espaço acima da seção de contato */
+}
+
+/* Estilos para os itens de contato */
+.contato-item {
+    display: flex;
+    align-items: center;
+    /* Alinha os ícones e texto verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    margin: 10px 0;
+    /* Margem entre os itens */
+    font-size: 1.2em;
+    /* Tamanho da fonte dos itens */
+    color: #364559;
+    /* Cor do texto */
+}
+
+/* Estilos para links */
+.contato-item a {
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    color: inherit;
+    /* Herda a cor do texto */
+    display: flex;
+    /* Flex para alinhar ícones e texto */
+    align-items: center;
+    /* Alinha verticalmente */
+}
+
+/* Estilos para ícones */
+.contato-item img {
+    margin-right: 10px;
+    /* Espaçamento entre o ícone e o texto */
+    transition: transform 0.3s;
+    /* Transição suave para o efeito de hover */
+}
+
+/* Efeito ao passar o mouse nos ícones */
+.contato-item a:hover img {
+    transform: scale(1.1);
+    /* Aumenta o ícone ao passar o mouse */
+}
+
+.contato-info h2 {
+    color: #6D8EF2;
+    /* Cor dos títulos das seções */
+    border-bottom: 2px solid #4B61A6;
+    /* Borda abaixo do título */
+    padding-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    font-size: 1.5em;
+    /* Tamanho da fonte para o título */
+    text-align: center;
+    /* Centraliza o título */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do título */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .contato-info {
+        flex-direction: column;
+        /* Alinha os itens em coluna em telas pequenas */
+    }
+
+    .contato-item {
+        font-size: 1em;
+        /* Tamanho da fonte menor em telas pequenas */
+    }
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #2C3740;
+    /* Cor de fundo do rodapé */
+    color: #F2F2F2;
+    /* Cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 30px;
+    /* Espaçamento interno */
+    position: relative;
+    /* Para manter o rodapé em sua posição */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destaque */
+    border-top: 4px solid #1D8FF2;
+    /* Borda superior colorida */
+}
+
+/* Estilos para o texto do rodapé */
+footer p {
+    margin: 10px 0;
+    /* Margem acima e abaixo do texto */
+    font-size: 0.9em;
+    /* Tamanho de fonte menor e moderno */
+    font-family: 'Arial', sans-serif;
+    /* Fonte moderna */
+}
+
+/* Estilos para a área de redes sociais */
+.social-media {
+    display: flex;
+    /* Usar flexbox para disposição dos ícones */
+    justify-content: center;
+    /* Centraliza os ícones */
+    gap: 20px;
+    /* Espaço entre os ícones */
+}
+
+/* Estilos para os links */
+.social-media a {
+    color: #F2F2F2;
+    /* Cor dos ícones */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    transition: transform 0.3s, filter 0.3s;
+    /* Transição suave para o efeito de hover */
+    font-size: 1.5em;
+    /* Tamanho dos ícones */
+}
+
+/* Efeito ao passar o mouse nos links */
+.social-media a:hover {
+    transform: scale(1.2);
+    /* Aumenta o ícone ao passar o mouse */
+    filter: brightness(1.2);
+    /* Aumenta o brilho do ícone ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    footer {
+        padding: 20px;
+        /* Reduz o padding em telas menores */
+    }
+
+    .social-media {
+        gap: 15px;
+        /* Reduz o espaço entre os ícones em telas menores */
+    }
+
+    footer p {
+        font-size: 0.8em;
+        /* Tamanho da fonte menor em telas pequenas */
+    }
+}
